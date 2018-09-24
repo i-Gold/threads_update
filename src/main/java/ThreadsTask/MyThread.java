@@ -4,9 +4,10 @@ import java.util.List;
 
 public class MyThread implements Runnable {
 
+    private static List<Integer> generatedRandomList = new ListOfRandomNumbers().generateListOfRandomNumbers();
+
     @Override
     public void run() {
-        List<Integer> generatedRandomList = new ListOfRandomNumbers().generateListOfRandomNumbers();
         List<Integer> extractNumbers = new ListOfRandomNumbers().extractNumbersFromRandomList(generatedRandomList);
         new ListOfRandomNumbers().sortList(extractNumbers);
         showExtractedList(extractNumbers);

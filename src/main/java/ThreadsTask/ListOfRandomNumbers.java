@@ -10,7 +10,7 @@ public class ListOfRandomNumbers implements Serializable {
 
     private static final int SIZE_OF_LIST = 1000;
 
-    public static List<Integer> generatedRandomList = new ListOfRandomNumbers().generateListOfRandomNumbers();
+    private static List<Integer> generatedRandomList = new ListOfRandomNumbers().generateListOfRandomNumbers();
 
     public static List<Integer> getGeneratedRandomList() {
         return generatedRandomList;

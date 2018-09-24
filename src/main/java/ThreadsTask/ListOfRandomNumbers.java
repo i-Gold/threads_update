@@ -9,7 +9,6 @@ import java.util.Random;
 public class ListOfRandomNumbers implements Serializable {
 
     private static final int SIZE_OF_LIST = 1000;
-    private static int countNumbersForExtracting = 50;
 
     public List<Integer> generateListOfRandomNumbers() {
         List<Integer> result = new ArrayList<>();
@@ -28,11 +27,9 @@ public class ListOfRandomNumbers implements Serializable {
 
     public synchronized List<Integer> extractNumbersFromRandomList(List<Integer> list) {
         List<Integer> result = new ArrayList<>();
-        for (int i = 0; i < list.size(); i++) {
-            if (i < countNumbersForExtracting) {
-                int value = list.get(i);
-                result.add(value);
-            }
+        for (int i = 0; i < list.size() / 20; i++) {
+            int value = list.get(i);
+            result.add(value);
         }
         return result;
     }
